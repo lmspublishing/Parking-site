@@ -11,3 +11,5 @@ Posit Connect app. No application source code or secrets belong in this
 repository.
 
 Deployment is handled automatically by the GitHub Pages workflow on changes to this directory.
+
+Pages enabled and deployment verified from this public-site repository.
