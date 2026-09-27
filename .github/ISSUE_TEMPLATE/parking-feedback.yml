@@ -1,0 +1,70 @@
+name: Parking beta feedback
+description: Report a confusing, incorrect or missing parking result
+title: "[Beta feedback] "
+labels:
+  - feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing Sydney Parking Finder. Please do not include your home address, phone number or other unnecessary personal information.
+
+        Street signs and temporary restrictions always override the app. If you are reporting a wrong parking rule, describe the area or landmark and what the physical sign said.
+
+  - type: dropdown
+    id: feedback_type
+    attributes:
+      label: What kind of feedback is this?
+      options:
+        - A parking result looks wrong or stale
+        - Parking coverage is missing or weak
+        - Price or time-limit information looks wrong
+        - Map or directions problem
+        - Search/address/current-location problem
+        - App usability or wording
+        - App error or crash
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: area
+    attributes:
+      label: Area or landmark
+      description: Suburb, station, landmark or intersection is enough. Please avoid a private/home address.
+      placeholder: e.g. Gordon Station, Chatswood CBD, Bondi Pavilion
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: Tell us what you searched for, what the app showed and what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: sign_source
+    attributes:
+      label: What did the street sign or official source say?
+      description: Optional, but especially useful for incorrect parking restrictions or prices.
+
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - Android phone
+        - iPhone
+        - Desktop/laptop
+        - Tablet
+        - Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots are useful if they do not reveal private information.
