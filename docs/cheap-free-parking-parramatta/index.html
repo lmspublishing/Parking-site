@@ -50,5 +50,18 @@
       <nav><a href="https://lmspublishing.github.io/Parking-site/">Back to Sydney Parking Finder</a></nav>
     </main>
   </div>
-</body>
+
+    <script>
+      document.addEventListener('click', function (event) {
+        const link = event.target.closest('a[href*="share.connect.posit.cloud"]');
+        if (!link || typeof gtag !== 'function') return;
+
+        gtag('event', 'parking_app_open', {
+          source_page: window.location.pathname,
+          cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80),
+          transport_type: 'beacon'
+        });
+      });
+    </script>
+  </body>
 </html>
